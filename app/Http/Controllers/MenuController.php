@@ -19,7 +19,7 @@ class MenuController extends Controller
         $menu = $user ? menu::where('id_user', null)->orWhere('id_user', $user->id_user)->get() : menu::where("id_user", null)->get();
         return $menu->map(function ($menu) use ($user) {
             return [
-                'id_buku' => $menu->id_buku,
+                'id_menu' => $menu->id_menu,
                 'judul' => $menu->judul,
                 'kategori' => $menu->kategori,
                 'asal' => $menu->asal,
