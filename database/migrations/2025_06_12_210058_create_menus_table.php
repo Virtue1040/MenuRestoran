@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('judul');
             $table->string('kategori');
             $table->string('asal');
+            $table->string("imageUrl");
 
             $table->foreign('id_user')->references('id_user')->on('users');
             $table->timestamps();

@@ -36,8 +36,8 @@ class MenuController extends Controller
         //
     }
 
-    public function getImage($id_buku) {
-        $menu = menu::find($id_buku);
+    public function getImage($id_menu) {
+        $menu = menu::find($id_menu);
 
         if ($menu) {
             $path = public_path($menu->imageUrl);
@@ -94,7 +94,7 @@ class MenuController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatemenuRequest $request, menu $menu, $id_buku)
+    public function update(UpdatemenuRequest $request, menu $menu, $id_menu)
     {
         $request->validate([
             "judul" => ["required", "string", "max:255"],
@@ -103,7 +103,7 @@ class MenuController extends Controller
             "image" => ["image"],
         ]);
 
-        $menu = menu::find($id_buku);
+        $menu = menu::find($id_menu);
 
         if (!$menu) {
             return response()->json([
@@ -141,9 +141,9 @@ class MenuController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Request $request, menu $menu, $id_buku)
+    public function destroy(Request $request, menu $menu, $id_menu)
     {
-        $menu = menu::find($id_buku);
+        $menu = menu::find($id_menu);
 
         if (!$menu) {
             return response()->json([
