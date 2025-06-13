@@ -14,6 +14,7 @@ class menu extends Model
         'id_user',
         'judul',
         'kategori',
+        'imageUrl',
         'asal',
     ];
 
