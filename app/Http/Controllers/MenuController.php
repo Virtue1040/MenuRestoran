@@ -48,7 +48,7 @@ class MenuController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreBukuRequest $request)
+    public function store(StoremenuRequest $request)
     {
         $request->validate([
             "judul" => ["required", "string", "max:255"],
@@ -94,7 +94,7 @@ class MenuController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateBukuRequest $request, menu $menu, $id_buku)
+    public function update(UpdatemenuRequest $request, menu $menu, $id_buku)
     {
         $request->validate([
             "judul" => ["required", "string", "max:255"],
